@@ -6,7 +6,9 @@ Sign Shops in Vanilla Minecraft!
 
 ## Compatibility
 This pack relies on `PlayerDB`, created by rx#1284 on Discord. In addition, it requires Suso's string parsing library. They can be found at these links:
+
 PlayerDB <link>https://github.com/rx-modules/PlayerDB</link>
+
 String Parser <link>https://github.com/5uso/String-Parser</link>
 
 Note that you MUST ENABLE COMMAND BLOCKS before adding the string parser. If you don't, the datapack misbehaves until you manage to fix it. I can't/won't support your issues if the string parser breaks. You can tell if it does if your sign does NOT change color once it turns orange, even if you interact with it correctly/incorrectly.
