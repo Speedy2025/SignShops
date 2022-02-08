@@ -24,4 +24,6 @@ scoreboard objectives add ss.balance trigger [{"text":"Balance","color":"green"}
 
 #Forceload
 forceload add 29999999 43376
-setblock 29999984 -5 43376 yellow_shulker_box[facing=down] replace
+execute in minecraft:overworld run setblock 29999984 0 43377 yellow_shulker_box[facing=down] replace
+
+schedule function signshops:force_load 1s replace

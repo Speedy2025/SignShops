@@ -30,8 +30,8 @@ execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run f
 data modify storage signshops:ops Items set from entity @s SelectedItem
 execute store result storage signshops:ops Items.Count int 1 run scoreboard players operation @s ss.interact -= @s ss.matches
 tellraw @a [{"score":{"name":"@s","objective":"ss.matches"}},{"text":" "},{"score":{"name":"@s","objective":"ss.interact"}}]
-data modify block 29999984 -5 43376 Items[] set from storage signshops:ops Items
-loot replace entity @s weapon.mainhand 1 mine 29999984 -5 43376 air{drop_contents:1b}
+execute in minecraft:overworld run data modify block 29999984 0 43377 Items[] set from storage signshops:ops Items
+execute in minecraft:overworld run loot replace entity @s weapon.mainhand 1 mine 29999984 0 43377 air{drop_contents:1b}
 
 # Modify Currency
 scoreboard players operation @e[tag=ss.temp.target,limit=1] ss.stock -= @e[tag=ss.temp.target,limit=1] ss.currency
