@@ -9,8 +9,8 @@
 
 ## COMMANDS
 #Give item - Includes protective measure
-data modify block 29999984 0 43377 Items[] set from storage rx:io player.data.signshops.collect.Items[-1]
-execute store result score #success ss.matches run loot give @s mine 29999984 0 43377 air{drop_contents:1b}
+execute in minecraft:overworld run data modify block 29999984 0 43377 Items[] set from storage rx:io player.data.signshops.collect.Items[-1]
+execute in minecraft:overworld store result score #success ss.matches run loot give @s mine 29999984 0 43377 air{drop_contents:1b}
 execute if score #success ss.matches matches 1.. run data remove storage rx:io player.data.signshops.collect.Items[-1]
 
 #Update Counters
