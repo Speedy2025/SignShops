@@ -27,6 +27,6 @@ execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 store
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run function #rx.playerdb:api/v2/save
 
 #Give Items
-execute in minecraft:overworld run data modify block 29999984 0 43377 Items[] set from entity @e[tag=ss.temp.target,limit=1] data.Item
-execute in minecraft:overworld store result score #success ss.matches run loot give @s mine 29999984 0 43377 air{drop_contents:1b}
+execute in minecraft:overworld run data modify block 29999984 0 43378 Items[] set from entity @e[tag=ss.temp.target,limit=1] data.Item
+execute in minecraft:overworld store result score #success ss.matches run loot give @s mine 29999984 0 43378 air{drop_contents:1b}
 execute positioned as @s if score #success ss.matches matches 0 run function signshops:operations/interact/buy/success_backup
