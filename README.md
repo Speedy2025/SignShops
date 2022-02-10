@@ -47,6 +47,13 @@ Like stocking a shop, hold the items in your main hand. If you have enough to se
 ### Checking a Shop's Stock
 Don't know what's being sold or you want to know how much stock a shop has? All you have to do is crouch and right click the sign.
 
+## Admin Shops
+Sometimes you need a special type of shop where nobody owns it. This is handy for making a shopping area on a server where players can sell their stuff to gain money for use elsewhere. Admin Shops are just that- they are owned by nobody and have unlimited stock. They have **NO VISUAL DIFFERENCE** and are intended to be able to blend in to normal shops. If you check their stock, they will report infinite stock. You can sell/buy without restrictions.
+
+You should NEVER give players the ability to create admin shops. This WILL break the economy and make signshops pointless. Instead, only give the tag (see Admin Tags below) to yourself sparingly.
+
+When you have the tag, you'll automatically create admin shops. You can tell if you've made an adminshop if it skips over the restocking stage and instantly turns blue instead of light red. You can also tell if it is an admin shop by checking the stock for an infinity sign.
+
 ## Admin Tags
 Like Speedy's Essentials, I've included a small suite of tags for making your life easier (or harder) with controlling permissions. They are as follows...
 * ss.adminshop - Create AdminShops
