@@ -47,6 +47,14 @@ Like stocking a shop, hold the items in your main hand. If you have enough to se
 ### Checking a Shop's Stock
 Don't know what's being sold or you want to know how much stock a shop has? All you have to do is crouch and right click the sign.
 
+## Admin Tags
+Like Speedy's Essentials, I've included a small suite of tags for making your life easier (or harder) with controlling permissions. They are as follows...
+* ss.adminshop - Create AdminShops
+* ss.disable.all - Disable ALL functionality of SignShops
+* ss.disable.create - Disable creation of signs
+* ss.disable.signs - Disable useage of signs
+* ss.disable.balance - Disable the ability to check balance
+* ss.disable.retrieve - Disables retrieval of items from collection
 
 # On Bugs...
 While I make a reasonable effort to test on my local world and server before release, I cannot promise this will be bug-free. If you do know bugs, please mesage me on discord **@Speedy2025#2025** or ping me on one of the servers I can be found on.
