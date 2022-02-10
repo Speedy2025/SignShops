@@ -35,12 +35,12 @@ execute as @e[tag=ss.marker] at @s unless block ~ ~ ~ #minecraft:signs run funct
 # Check Retrieval System
 execute as @a[scores={ss.retrieve=1..}] run function signshops:operations/retrieve/root
 scoreboard players reset @a ss.retrieve
+scoreboard players enable @a[tag=!ss.disable.retrieve,tag=!ss.disable.all] ss.retrieve
 
 # Check Balance
 execute as @a[scores={ss.balance=1..}] run function signshops:operations/balance/root
 scoreboard players reset @a ss.balance
-scoreboard players enable @a[tag=!ss.disable.balance] ss.balance
+scoreboard players enable @a[tag=!ss.disable.balance,tag=!ss.disable.all] ss.balance
 
 # Update Admin Shops
-scoreboard players enable @a[tag=!ss.disable.retrieve] ss.retrieve
 execute as @e[scores={ss.interact=-1}] run scoreboard players set @s ss.stock 999999999
