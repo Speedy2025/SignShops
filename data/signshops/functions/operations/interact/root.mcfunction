@@ -16,7 +16,7 @@ execute if score #success ss.raycast matches 2 if score @s ss.interact matches .
 
 # If it's not initialized
 # New success value: 3, if it's an initializing sign
-execute if score #success ss.raycast matches 1 run function signshops:operations/interact/init/root
+execute if score #success ss.raycast matches 1 unless entity @s[tag=ss.disable.create] run function signshops:operations/interact/init/root
 
 #Enable the sign, if needed
 scoreboard players reset @s ss.interact
