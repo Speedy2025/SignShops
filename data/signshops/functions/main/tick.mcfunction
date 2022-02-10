@@ -18,7 +18,7 @@
 # ss.disable.balance    disables balance
 # ss.disable.retrieve   disables retrieving from collection
 #
-# ss.adminshop          creates adminshops instead of normal ones)
+# ss.adminshop          creates adminshops instead of normal ones
 
 ## COMMANDS
 
