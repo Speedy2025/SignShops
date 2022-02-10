@@ -42,5 +42,5 @@ scoreboard players reset @a ss.balance
 scoreboard players enable @a[tag=!ss.disable.balance] ss.balance
 
 # Update Admin Shops
-execute as @a unless score @s c.inv.curr matches 2 unless score @s c.inv.curr matches 11 run scoreboard players enable @s[tag=!ss.disable.retrieve] ss.retrieve
+scoreboard players enable @a[tag=!ss.disable.retrieve] ss.retrieve
 execute as @e[scores={ss.interact=-1}] run scoreboard players set @s ss.stock 999999999
