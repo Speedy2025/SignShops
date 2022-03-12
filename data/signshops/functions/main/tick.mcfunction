@@ -6,6 +6,8 @@
 #   - signshops:operations/recovery/root
 #   - signshops:operations/retrieve/root
 #   - signshops:operations/balance/root
+#   - signshops:operations/transfer/send
+#   - signshops:operations/transfer/set_destination
 # Called by:
 #   - None
 # Description:
@@ -17,6 +19,7 @@
 # ss.disable.create     disables sign creation
 # ss.disable.balance    disables balance
 # ss.disable.retrieve   disables retrieving from collection
+# ss.disable.transfer   disables sending of money
 #
 # ss.adminshop          creates adminshops instead of normal ones
 
@@ -36,6 +39,12 @@ execute as @e[tag=ss.marker] at @s unless block ~ ~ ~ #minecraft:signs run funct
 execute as @a[scores={ss.retrieve=1..}] run function signshops:operations/retrieve/root
 scoreboard players reset @a ss.retrieve
 scoreboard players enable @a[tag=!ss.disable.retrieve,tag=!ss.disable.all] ss.retrieve
+
+# Transfer Balance
+execute as @a[scores={ss.transfer=1..}] run function signshops:operations/transfer/set_destination
+execute as @a[scores={ss.transfer=..-1}] run function signshops:operations/transfer/send
+scoreboard players reset @a ss.transfer
+scoreboard players enable @a[tag=!ss.disable.transfer,tag=!ss.disable.all] ss.transfer
 
 # Check Balance
 execute as @a[scores={ss.balance=1..}] run function signshops:operations/balance/root

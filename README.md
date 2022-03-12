@@ -47,6 +47,9 @@ Like stocking a shop, hold the items in your main hand. If you have enough to se
 ### Checking a Shop's Stock
 Don't know what's being sold or you want to know how much stock a shop has? All you have to do is crouch and right click the sign.
 
+## Sending Money
+You can easily send money to people. All you have to do is type `/trigger ss.transfer set #`, replacing # with their UID. You'll then be prompted to type `/trigger ss.transfer set -#`. Like before, replace the # with how much you want to send. For example, to send $50 to steve, who has a UID of 5, type `/trigger ss.transfer set 5` and then `/trigger ss.transfer set -50`.
+
 ## Admin Shops
 Sometimes you need a special type of shop where nobody owns it. This is handy for making a shopping area on a server where players can sell their stuff to gain money for use elsewhere. Admin Shops are just that- they are owned by nobody and have unlimited stock. They have **NO VISUAL DIFFERENCE** and are intended to be able to blend in to normal shops. If you check their stock, they will report infinite stock. You can sell/buy without restrictions.
 
