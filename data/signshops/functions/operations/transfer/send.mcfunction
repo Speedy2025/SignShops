@@ -10,7 +10,7 @@
 ## COMMANDS
 
 # Fix balance
-scoreboard players operation @s ss.transfer *= #const.n1 ss.COSNTANT
+scoreboard players operation @s ss.transfer *= #const.n1 ss.CONSTANT
 
 # Check balance & if they're online
 execute if score @s ss.transfer <= @s ss.currency run tag @s add ss.target

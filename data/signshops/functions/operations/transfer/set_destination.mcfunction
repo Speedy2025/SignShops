@@ -11,7 +11,10 @@
 
 # Check if it ISN'T themselves && check if the player is online before proceeding - otherwise ignore or error
 tag @s add ss.fixcontext
-execute unless score @s ss.transfer = @s rx.uid as @a if score @s rx.uid = @a[tag=ss.fixcontext,limit=1] ss.transfer as @a[tag=ss.fixcontext,limit=1] run scoreboard players operation @s ss.destination = @s ss.transfer
-execute unless score @s ss.transfer = @s rx.uid as @a if score @s rx.uid = @a[tag=ss.fixcontext,limit=1] ss.transfer as @a[tag=ss.fixcontext,limit=1] run tellraw @s ["",{"text":"[SignShops] ","color":"green"},{"text":"Started sending money to "},{"storage":"rx.playerdb:io","nbt":"player.info.name","color":"gold"},{"text":". Run "},{"text":"/trigger ss.transfer set -#","color":"gold","hoverEvent":{"action":"show_text","value":["",{"text":"Click to copy the command, then type how much money you want to send!"}]},"clickEvent":{"action":"suggest_command","value":"/trigger ss.transfer set -"}},{"text":" to send the money!"}]
-execute unless score @s ss.transfer = @s rx.uid as @a unless score @s rx.uid = @a[tag=ss.fixcontext,limit=1] ss.transfer as @a[tag=ss.fixcontext,limit=1] run tellraw @s ["",{"text":"[SignShops] ","color":"green"},{"text":"That player is offline or doesn't exist."}]
+scoreboard players operation #target ss.transfer = @s ss.transfer
+
+
+execute unless score @s ss.transfer = @s rx.uid if entity @a[predicate=signshops:id_match] run scoreboard players operation @s ss.destination = @s ss.transfer
+execute unless score @s ss.transfer = @s rx.uid if entity @a[predicate=signshops:id_match] run tellraw @s ["",{"text":"[SignShops] ","color":"green"},{"text":"Started sending money to "},{"storage":"rx.playerdb:io","nbt":"player.info.name","color":"gold"},{"text":". Run "},{"text":"/trigger ss.transfer set -#","color":"gold","hoverEvent":{"action":"show_text","value":["",{"text":"Click to copy the command, then type how much money you want to send!"}]},"clickEvent":{"action":"suggest_command","value":"/trigger ss.transfer set -"}},{"text":" to send the money!"}]
+execute unless score @s ss.transfer = @s rx.uid unless entity @a[predicate=signshops:id_match] run tellraw @s ["",{"text":"[SignShops] ","color":"green"},{"text":"That player is offline or doesn't exist."}]
 tag @s remove ss.fixcontext
