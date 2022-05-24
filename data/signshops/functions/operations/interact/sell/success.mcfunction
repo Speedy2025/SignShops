@@ -21,7 +21,7 @@
 # </rant>
 
 # Reward buyer the items
-execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run scoreboard players operation $in.uid rx.pdb.io = @e[tag=ss.temp.target,limit=1] ss.interact
+execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run scoreboard players operation $in.uid rx.playerdb.io = @e[tag=ss.temp.target,limit=1] ss.interact
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run function #rx.playerdb:api/v2/get
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run data modify storage rx:io player.data.signshops.collect.Items append from entity @e[tag=ss.temp.target,limit=1] data.Item
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run function #rx.playerdb:api/v2/save

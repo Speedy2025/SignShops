@@ -20,7 +20,7 @@ execute if score @e[tag=ss.temp.target,limit=1] ss.stock < @s ss.stock run data 
 scoreboard players operation @s ss.currency -= @e[tag=ss.temp.target,limit=1] ss.currency
 
 #Update Currency
-execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run scoreboard players operation $in.uid rx.pdb.io = @e[tag=ss.temp.target,limit=1] ss.interact
+execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run scoreboard players operation $in.uid rx.playerdb.io = @e[tag=ss.temp.target,limit=1] ss.interact
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 run function #rx.playerdb:api/v2/get
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 store result score @s ss.stock run data get storage rx:io player.data.signshops.collect.currency
 execute unless score @e[tag=ss.temp.target,limit=1] ss.interact matches -1 store result storage rx:io player.data.signshops.collect.currency int 1 run scoreboard players operation @s ss.stock += @e[tag=ss.temp.target,limit=1] ss.currency
