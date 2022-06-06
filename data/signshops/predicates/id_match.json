@@ -17,10 +17,10 @@
       "max": {
         "type": "minecraft:score",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "#target"
+          "type": "minecraft:context",
+          "target": "this"
         },
-        "score": "bh.id"
+        "score": "rx.uid"
       }
     }
   }
