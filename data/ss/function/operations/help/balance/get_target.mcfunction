@@ -1,0 +1,1 @@
+$execute store result score #balance ss.stock run data get storage se:storage vals[{UUID: $(UUID)}].ss.Balance

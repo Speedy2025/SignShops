@@ -1,0 +1,1 @@
+$tellraw @s ["",{text:"[Sign Shop]",color:"green"}," ",{nbt:"vals[{UUID: $(UUID)}].name",storage:"se:key",interpret:true},{text:"'s"},{text:" balance: "},{text:"$",color:"gold"},{nbt:"vals[{UUID: $(UUID)}].ss.Balance",storage:"se:storage",color:"gold"}]

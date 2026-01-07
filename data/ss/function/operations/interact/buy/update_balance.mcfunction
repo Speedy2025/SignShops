@@ -1,0 +1,1 @@
+$execute store result storage se:storage vals[{UUID: $(UUID)}].ss.Balance int 1 run scoreboard players get #balance ss.stock

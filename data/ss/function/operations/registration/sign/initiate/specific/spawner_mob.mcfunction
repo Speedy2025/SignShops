@@ -1,0 +1,1 @@
+$data modify storage ss:temp assign.name set string storage ss:temp assign.alt_name 10 $(len)

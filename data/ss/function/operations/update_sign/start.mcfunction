@@ -1,0 +1,9 @@
+execute store result score #stock ss.stock run data get entity @e[type=marker,tag=ss.marker,distance=0..0.25,limit=1] data.ss.stock
+execute store result score #amount ss.stock run data get entity @e[type=marker,tag=ss.marker,distance=0..0.25,limit=1] data.ss.amount
+execute store result score #price ss.stock run data get entity @e[type=marker,tag=ss.marker,distance=0..0.25,limit=1] data.ss.price
+execute if entity @e[type=marker,tag=ss.marker,tag=ss.adminshop,distance=0..0.25,limit=1] run return fail
+
+execute if score #stock ss.stock >= #amount ss.stock if data entity @e[type=marker, tag=ss.marker, distance=0..0.25,limit=1] data.ss{type: "buy"} run return run data modify block ~ ~ ~ front_text.messages[0] set value [{text:"[Buy]",color:"dark_blue",click_event:{action:"run_command",command:"/trigger ss.interact set -2"}}]
+execute if score #stock ss.stock >= #price ss.stock if data entity @e[type=marker, tag=ss.marker, distance=0..0.25,limit=1] data.ss{type: "sell"} run return run data modify block ~ ~ ~ front_text.messages[0] set value [{text:"[Sell]",color:"dark_blue",click_event:{action:"run_command",command:"/trigger ss.interact set -2"}}]
+execute if score #stock ss.stock < #amount ss.stock if data entity @e[type=marker, tag=ss.marker, distance=0..0.25,limit=1] data.ss{type: "buy"} run data modify block ~ ~ ~ front_text.messages[0] set value [{text:"[Buy]",color:"red",click_event:{action:"run_command",command:"/trigger ss.interact set -2"}}]
+execute if score #stock ss.stock < #price ss.stock if data entity @e[type=marker, tag=ss.marker, distance=0..0.25,limit=1] data.ss{type: "sell"} run data modify block ~ ~ ~ front_text.messages[0] set value [{text:"[Sell]",color:"red",click_event:{action:"run_command",command:"/trigger ss.interact set -2"}}]

@@ -1,0 +1,6 @@
+$execute unless data storage se:key vals[{uid: $(uid)}].name run return run tellraw @s ["",{text:"[Sign Shops]",color:"green"},{text:" That player does not exist."}]
+$execute if score @s ss.transfer = @s se.uid run return run tellraw @s ["",{text:"[Sign Shops]",color:"green"},{text:" You may not pass the charge to "},{nbt:"vals[{uid: $(uid)}].name",storage:"se:key",color:"gold",interpret:true},"."]
+#The UID exists.
+$tellraw @s ["",{text:"[Sign Shops]",color:"green"},{text:" Beginning transfer to "},{nbt:"vals[{uid: $(uid)}].name",storage:"se:key",color:"gold",interpret:true},". ",{text:"(?)",color:"gray",italic:true,hover_event:{action:"show_text",value:["",{text:"Sign Shops - Transfer",color:"green",bold:true},{text:"\nEnter a "},{text:"positive number",color:"gold"},{text:" to transfer it."},{text:"\nEnter a "},{text:"negative value",color:"gold"},{text:" to cancel the transfer."},{text:"\n\nClick to paste base command",color:"gray",italic:true}]},click_event:{action:"suggest_command",command:"/trigger ss.transfer set "}}]
+scoreboard players operation @s ss.target = @s ss.transfer
+tag @s add ss.transfer

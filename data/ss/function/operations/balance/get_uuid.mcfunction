@@ -1,0 +1,1 @@
+$data modify storage ss:temp val.UUID set from storage se:key vals[{uid: $(uid)}].UUID

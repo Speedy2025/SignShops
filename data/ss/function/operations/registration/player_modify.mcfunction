@@ -1,0 +1,1 @@
+$data modify storage se:storage vals[{UUID: $(UUID)}].ss set value {Balance: 0, Collection: {Items: [], OntimeBox: 0}}
